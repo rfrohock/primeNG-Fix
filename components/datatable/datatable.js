@@ -281,7 +281,7 @@ var DataTable = (function () {
                 this.stopSortPropagation = false;
             }
             else if (!this.lazy && (this.sortField || this.multiSortMeta)) {
-                if (!this.sortColumn ) {
+                if (!this.sortColumn && this.columns) {
                     this.sortColumn = this.columns.find(function (col) { return col.field === _this.sortField && col.sortable === 'custom'; });
                 }
                 if (this.sortMode == 'single')
